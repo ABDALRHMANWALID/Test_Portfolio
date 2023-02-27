@@ -1,0 +1,148 @@
+<div class="add_client">
+  <div class="part">
+    <div class="main_title">Add Clients</div>
+    <form [formGroup]="formClient" class="form">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Client Name</mat-label>
+          <input formControlName="name" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Who Client</mat-label>
+          <mat-select formControlName="whoClient" required>
+            <mat-option value="person">person</mat-option>
+            <mat-option value="personToCompany">Person To Company</mat-option>
+            <mat-option value="company">Company</mat-option>
+            <mat-option value="big_company">Big Company</mat-option>
+          </mat-select>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>How I Know Him?</mat-label>
+          <input formControlName="howIKnow" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <div class="drag_drop" #imageCardDrop>
+          <label for="card_image">
+            <span>Uplaod Image Card</span>
+            <div class="image">
+              <img src="" #card_image>
+            </div>
+          </label>
+          <input (change)="selectImage($event,'imageIdCard')" type="file" id="card_image" accept="image/*">
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Nationality</mat-label>
+          <mat-select formControlName="nationality">
+            <mat-option *ngFor="let national of nationalities" [value]="national">
+              {{national}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input formControlName="age" type="number" matInput>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <div class="drag_drop" #logoDrop>
+          <label for="logo_image">
+            <span>Uplaod Logo</span>
+            <div class="image">
+              <img src="" #logo_image>
+            </div>
+          </label>
+          <input (change)="selectImage($event,'logo')" type="file" id="logo_image" accept="image/*">
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Accounts</mat-label>
+          <input #inpAccount matInput>
+        </mat-form-field>
+        <div class="con_inp_btn">
+          <mat-form-field appearance="fill">
+            <mat-label>URL Accounts</mat-label>
+            <input #inpLinkAccount matInput type="url">
+          </mat-form-field>
+          <button (click)="addAccount($event)" class="main_btn check">
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+        <div class="accounts_group">
+          <div class="account_link" *ngFor="let account of accounts;index as i;">
+            <a class="main_link" [href]="account.link">{{account.title}}</a>
+            <button class="main_btn" (click)="removeAccount(i)"><mat-icon>delete_outline</mat-icon></button>
+          </div>
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Bank Account Number</mat-label>
+          <input formControlName="bankAccountNum" type="number" matInput />
+        </mat-form-field>
+        <div class="drag_drop" #hisImageDrop>
+          <label for="his_image">
+            <span>Uplaod His Image</span>
+            <div class="image">
+              <img src="" #his_image>
+            </div>
+          </label>
+          <input (change)="selectImage($event,'image')" type="file" id="his_image" accept="image/*">
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>His Projects</mat-label>
+          <mat-select (selectionChange)="calcProjects()" formControlName="hisProjectsId" multiple required>
+            <mat-option *ngFor="let project of projects" [value]="project.id">{{project.title}}</mat-option>
+          </mat-select>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <fieldset [disabled]="true">
+          <mat-form-field appearance="fill">
+            <mat-label>Total Coast</mat-label>
+            <input formControlName="totalCoast" type="number" matInput required />
+            <mat-error>required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Projects Num</mat-label>
+            <input formControlName="projectsNum" type="number" matInput required />
+            <mat-error>required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Date Start Work</mat-label>
+            <input formControlName="dateStartWork" class="date" matInput [matDatepicker]="picker" required>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Date Last Project</mat-label>
+            <input formControlName="dateLastWork" class="date" matInput [matDatepicker]="picker2" required>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error>required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Duartion</mat-label>
+            <input formControlName="duartionWorked" type="number" matInput required />
+            <mat-error>required</mat-error>
+          </mat-form-field>
+        </fieldset>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea formControlName="description" matInput required></textarea>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+      </div>
+      <button class="form_btn main_btn" [disabled]="formClient.invalid" (click)="upload()">Uplaod</button>
+    </form>
+  </div>
+</div>

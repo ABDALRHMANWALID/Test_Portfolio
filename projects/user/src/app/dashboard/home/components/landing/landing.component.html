@@ -1,0 +1,30 @@
+<div class="landing session session_bg ">
+    <div class="container">
+        <div class="con">
+        <div class="info">
+            <div class="main_title">{{myFullName}}</div>
+            <div class="sub_title">{{myJob}}</div>
+            <a [href]="myCV" download class="main_btn">Download CV</a>
+        </div>
+        <div class="slide">
+            <div class="con">
+                <div class="frame">
+                    <div class="image">
+                        <div>
+                            <img [src]="myImg" alt="">
+                        </div>
+                    </div>
+                    <div class="information">
+                        <div class="name">{{myFullName}}</div>
+                        <div class="lvl_job">{{myLevel}} {{myJob}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="angles">
+            <a class="angle angle_last"><mat-icon>arrow_back</mat-icon></a>
+            <a class="angle angle_next"><mat-icon>arrow_forward</mat-icon></a>
+        </div>
+    </div>
+</div>

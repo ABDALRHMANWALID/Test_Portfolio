@@ -1,0 +1,10 @@
+<svg id="icons8-facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.646" height="46.646" viewBox="0 0 46.646 46.646">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.15" y1="0.15" x2="0.915" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2aa4f4"/>
+      <stop offset="1" stop-color="#007ad9"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_18" data-name="Path 18" d="M27.323,4A23.323,23.323,0,1,0,50.646,27.323,23.322,23.322,0,0,0,27.323,4Z" transform="translate(-4 -4)" fill="url(#linear-gradient)"/>
+  <path id="Path_19" data-name="Path 19" d="M28.476,32.14h6.036l.948-6.132H28.476V22.657c0-2.547.833-4.806,3.215-4.806h3.828V12.5a32.538,32.538,0,0,0-4.784-.289c-5.614,0-8.9,2.964-8.9,9.719V26.01H16.06v6.132h5.77V48.994a23.589,23.589,0,0,0,3.489.287,23.464,23.464,0,0,0,3.157-.238Z" transform="translate(-1.996 -2.636)" fill="#fff"/>
+</svg>

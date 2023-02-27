@@ -1,0 +1,175 @@
+.projects {
+    padding-top: calc(var(--main-padding-top) + 80px);
+    background-image: url(../../../assets/images/blog_padge.png);
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr .3fr;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .part {
+                width: 100%;
+                background-color: var(--white-color-2);
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                box-shadow: var(--main-shadow);
+
+                .sub_title {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        .col.col_larage {
+            gap: 40px;
+
+            .project {
+                .main_title {
+                    margin-bottom: 24px;
+                }
+
+                .image {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    max-height: 300px;
+                    margin-bottom: 32px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .company {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                    margin-bottom: 16px;
+
+                    img {
+                        width: 32px;
+                    }
+
+                    span {
+                        color: var(--gray-color-1);
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+
+                .sub_title {
+                    margin-bottom: 24px;
+                }
+            }
+
+            .portfolio {
+                .main_title {
+                    margin-bottom: 24px;
+                }
+
+                .group_projs {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 32px;
+
+                    .proj {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        padding: 8px 8px 16px;
+                        gap: 16px;
+                        background-color: var(--bg-color);
+                        box-shadow: var(--main-shadow);
+
+                        .image {
+                            height: 200px;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: var(--white-color-2);
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                min-height: 100%;
+                            }
+                        }
+
+                        .links {
+                            margin-top: 8px;
+                            height: max-content;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 16px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .col.col_small {
+            gap: 24px;
+
+            .project_info {
+                .row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    font-size: 14px;
+                    color: var(--gray-color-1);
+
+                    span {
+                        color: var(--offwhite-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .projects {
+        .container {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .projects {
+
+        .container {
+
+            .col.col_larage {
+
+                .portfolio {
+
+                    .group_projs {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+            }
+        }
+    }
+}

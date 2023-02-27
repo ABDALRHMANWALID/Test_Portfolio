@@ -1,0 +1,84 @@
+.experience {
+    background-image: url(../../../../../assets/images/bg_experience.png);
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 40px;
+
+        .group_experience {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 32px;
+
+            .step_experience {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 24px;
+                z-index: 2;
+
+                &:not(:last-of-type)::before {
+                    content: "";
+                    position: absolute;
+                    top: 40px;
+                    left: 40px;
+                    transform: translateX(-50%);
+                    width: 5px;
+                    height: 100%;
+                    background-color: var(--offwhite-color);
+                    z-index: 1;
+                }
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 80px;
+                    width: 80px;
+                    background-color: var(--bg-color);
+                    box-shadow: var(--main-shadow);
+                    z-index: 2;
+
+                    img {
+                        width: 40px;
+                    }
+                }
+
+                .paragraph {
+                    span {
+                        font-weight: 600;
+                        color: var(--black-color-1);
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1200px) {
+    .experience {
+
+        .container {
+            .group_experience {
+
+                .step_experience {
+
+                    .paragraph {
+                        span {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

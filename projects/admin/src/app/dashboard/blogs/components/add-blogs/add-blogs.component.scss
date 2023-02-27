@@ -1,0 +1,88 @@
+.add_blog {
+    .part {
+        .form {
+            grid-template-columns: 1fr 1fr 2fr;
+
+            .col {
+                * {
+                    width: 100%;
+                }
+
+                input.date {
+                    width: 80%;
+                }
+
+                .attach_link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .main_link {
+                        width: fit-content;
+                    }
+
+                    .main_btn {
+                        padding: 0;
+                        width: 32px;
+                        height: 32px;
+                        font-size: 16px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        background-color: var(--orange-color);
+                    }
+                }
+
+                textarea {
+                    height: 350px;
+                }
+
+                .con_inp_btn {
+                    position: relative;
+
+                    .main_btn.check {
+                        position: absolute;
+                        transform: translateY(-75%);
+                        top: 50%;
+                        right: 10px;
+                        width: fit-content;
+                        height: 32px;
+                        width: 32px;
+                        padding: 0;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+
+                        mat-icon {
+                            font-size: 24px;
+                            height: fit-content;
+                            width: fit-content;
+                        }
+                    }
+                }
+
+                .attachments_group {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    gap: 8px;
+                    padding: 4px 16px;
+                    border: 2px dashed var(--offwhite-color);
+                    height: 184px;
+                    overflow: auto;
+
+                    .main_link {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .form_btn {
+                grid-column: 1/4;
+                text-align: center;
+            }
+        }
+    }
+}

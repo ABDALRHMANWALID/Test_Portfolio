@@ -1,0 +1,79 @@
+<div class="add_blog">
+  <div class="part">
+    <div class="main_title">Add Blogs</div>
+    <form [formGroup]="formBlog" class="form">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Your Title</mat-label>
+          <input formControlName="title" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Sub Title</mat-label>
+          <input formControlName="subTitle" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <input formControlName="date" class="date" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Update</mat-label>
+          <input formControlName="update" class="date" formControlName="update" matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <div class="drag_drop" #blogDrop>
+          <label for="blog_image">
+            <span>Uplaod Image</span>
+            <div class="image">
+              <img src="" #blog_image>
+            </div>
+          </label>
+          <input (change)="selectImage($event)" type="file" id="blog_image" accept="image/*">
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Attachments</mat-label>
+          <input #inpTitleAttach matInput>
+        </mat-form-field>
+        <div class="con_inp_btn">
+          <mat-form-field appearance="fill">
+            <mat-label>URL Attachments</mat-label>
+            <input #inpLinkAttach matInput type="url">
+          </mat-form-field>
+          <button (click)="addAttach($event)" class="main_btn check">
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+        <div class="attachments_group">
+          <div class="attach_link" *ngFor="let attach of attachments;index as i;">
+            <a class="main_link" [href]="attach.link">{{attach.title}}</a>
+            <button class="main_btn" (click)="removeAttach(i)"><mat-icon>delete_outline</mat-icon></button>
+          </div>
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Related Blogs</mat-label>
+          <mat-select formControlName="relatedBlogsId" [formControl]="relatedBlogsForm" multiple>
+            <mat-option *ngFor="let blog of blogs" [value]="blog.id">{{blog.title}}</mat-option>
+          </mat-select>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>blog Paragraph</mat-label>
+          <textarea formControlName="description" matInput required></textarea>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-checkbox formControlName="active" class="example-margin">Active</mat-checkbox>
+      </div>
+      <button class="form_btn main_btn" [disabled]="formBlog.invalid" (click)="upload()">Uplaod</button>
+    </form>
+  </div>
+</div>

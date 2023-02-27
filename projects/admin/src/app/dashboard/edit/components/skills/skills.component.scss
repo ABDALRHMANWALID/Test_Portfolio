@@ -1,0 +1,78 @@
+.edit_skills {
+    .part {
+        .form {
+            grid-template-columns: 1.5fr 3fr;
+            // display: flex;
+            // flex-direction: column;
+
+            .col {
+                width: 100%;
+
+                * {
+                    width: 100%;
+                }
+
+                .group_skills {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    gap: 24px;
+
+                    .skill {
+                        background-color: var(--bg-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        height: 48px;
+
+                        .ico_del {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            transform: translate(50%, -50%);
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 24px;
+                            width: 24px;
+                            border-radius: 50%;
+                            overflow: hidden;
+
+                            mat-icon {
+                                font-size: 16px;
+                                height: 16px;
+                                width: 16px;
+                            }
+                        }
+
+                        span {
+                            width: fit-content;
+                            font-size: 24px;
+                            color: var(--main-color);
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &::before {
+                                content: "#";
+                                position: absolute;
+                                top: 50%;
+                                left: -24px;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form_btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

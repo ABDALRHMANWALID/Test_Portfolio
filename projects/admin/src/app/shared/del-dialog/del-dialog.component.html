@@ -1,0 +1,10 @@
+<div class="del_dialog">
+    <div mat-dialog-content>
+        <div class="sub_title">Are Sure</div>
+        <div class="paragraph">Are Sure for delete {{data.item}} num: {{data.numItem}}</div>
+    </div>
+    <div class="del_dialog_btns" mat-dialog-actions>
+        <a class="main_link" (click)=" closeDialog(true)">Cancel</a>
+        <a class="main_btn delete" (click)=" closeDialog(false)">Delete</a>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="statistics">
+    <div class="statis" *ngFor="let statis of statistics;index as i;">
+        <div class="part info">
+            <div class="sub_title">{{statis.title}}</div>
+            <div class="sub_title num">{{statis.num}}</div>
+        </div>
+        <div class="part graph">
+            <div class="name_stat x_name_stat">{{statis.xValues.title}}</div>
+            <div class="name_stat y_name_stat">{{statis.yValues.title}}</div>
+            <!-- <canvas #acquisitions style="width:100%;max-width:600px"></canvas> -->
+            <canvas [id]="'myChart_'+i" style="width:100%;max-width:600px"></canvas>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="blogs session session_bg" id="Blogs">
+  <div class="container">
+    <div class="con">
+      <div class="info">
+        <div class="main_title">
+          My Blogs
+        </div>
+        <div class="paragraph">{{myBlogsDescription}}</div>
+      </div>
+
+      <div class="sildes-blog">
+        <div class="swiper mySwiper blog-slide">
+          <div class="swiper-wrapper">
+            <div class="blog swiper-slide" *ngFor="let blog of myBlogs">
+              <div class="date">{{blog.date}}</div>
+              <div class="image">
+                <div class="overlay">
+                  <a routerLink="/blogs" routerLinkActive="active" class="icon_link"><mat-icon>arrow_forward</mat-icon>
+                  </a>
+                </div>
+                <img [src]="blog.image" alt="">
+              </div>
+              <div class="sub_title">{{blog.title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="angles">
+      <a class="angle angle_last ">
+        <div class="swiper_angle">
+          <div class="swiper-button-prev"></div>
+        </div>
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <a class="angle angle_next">
+        <div class="swiper_angle">
+          <div class="swiper-button-next"></div>
+        </div>
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- 
+
+<div class="sildes-offer">
+  <div class="swiper mySwiper offer-slide">
+    <div class="swiper-wrapper">
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-1.jpg" alt="" /></a>
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-2.jpg" alt="" /></a>
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-3.jpg" alt="" /></a>
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-4.jpg" alt="" /></a>
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-5.jpg" alt="" /></a>
+      <a href="" class="swiper-slide slide-offer"><img src="images/offer-slide-6.jpg" alt="" /></a>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div> -->

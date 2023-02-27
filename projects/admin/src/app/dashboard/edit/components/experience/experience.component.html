@@ -1,0 +1,65 @@
+<div class="edit_experiences">
+    <div class="con">
+        <div class="part table_experience">
+            <div class="main_title">All Experiences</div>
+            <div class="table">
+                <div class="row head">
+                    <div class="col">Logo</div>
+                    <div class="col">Company</div>
+                    <div class="col"></div>
+                </div>
+                <div class="row" *ngFor="let exp of experiences;index as i;">
+                    <div class="col">
+                        <div class="image">
+                            <img [src]="exp.image" alt="">
+                        </div>
+                    </div>
+                    <div class="col">{{exp.title}}</div>
+                    <div class="col">
+                        <div class="col_btns">
+                            <button (click)="updateExp(i)" class="main_btn update">Update</button>
+                            <button class="main_btn delete" (click)="deleteExp(i)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part">
+            <div class="main_title">Add Exp...</div>
+            <form [formGroup]="formExps" class="form">
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input formControlName="title" matInput required />
+                        <mat-error>required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea formControlName="description" matInput required></textarea>
+                        <mat-error>required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Date range</mat-label>
+                        <mat-date-range-input [rangePicker]="picker">
+                            <input matStartDate placeholder="Start date" formControlName="dateStart" required>
+                            <input matEndDate placeholder="End date" formControlName="dateEnd" required>
+                            <mat-error>required</mat-error>
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+                    <div class="drag_drop" #expDrop>
+                        <label for="exp_image">
+                            <span>Uplaod Image</span>
+                            <div class="image">
+                                <img src="" #image_exp>
+                            </div>
+                        </label>
+                        <input (change)="selectImage($event)" type="file" id="exp_image" accept="image/*">
+                    </div>
+                    <button (click)="upload()" [disabled]="formExps.invalid" class="main_btn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

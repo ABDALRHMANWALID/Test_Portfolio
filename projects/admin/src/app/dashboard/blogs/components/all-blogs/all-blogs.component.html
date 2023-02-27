@@ -1,0 +1,67 @@
+<div class="all_blogs">
+
+    <div class="search part">
+        <div class="form">
+            <mat-form-field appearance="fill">
+                <mat-label>Search</mat-label>
+                <input #titSearch matInput required />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input #startDateSearch matStartDate placeholder="Start date">
+                    <input #endDateSearch matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <button (click)="search()" class="main_btn">Search</button>
+        </div>
+    </div>
+
+    <div class="part table_blog">
+        <div class="main_title">All Blogs</div>
+        <div class="table">
+            <div class="row head">
+                <div class="col">image</div>
+                <div class="col">Title</div>
+                <div class="col">Date</div>
+                <div class="col">Updated</div>
+                <div class="col"></div>
+            </div>
+            <div class="row" *ngFor="let blog of blogs;index as i;">
+                <div class="col">
+                    <div class="image">
+                        <img [src]="blog.image" alt="">
+                    </div>
+                </div>
+                <div class="col">{{blog.title}}</div>
+                <div class="col">{{blog.date}}</div>
+                <div class="col">{{blog.update}}</div>
+                <div class="col">
+                    <div class="col_btns">
+                        <button  (click)="active(i) " class="main_btn active">Active</button>
+                        <button (click)="update(i)" class="main_btn update">Update</button>
+                        <button class="main_btn delete" (click)="deleteBlog(i)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <div class="arrows">
+            <div class="main_btn arrow last">
+                <div class="icon">
+                    <img src="assets/icons/arrow_right_alt_black_24dp.svg" alt="">
+                </div><span>last</span>
+            </div>
+            <div class="main_btn arrow next">
+                <div class="icon">
+                    <img src="assets/icons/arrow_right_alt_black_24dp.svg" alt="">
+                </div>
+                <span>next</span>
+            </div>
+        </div>
+    </div>
+</div>

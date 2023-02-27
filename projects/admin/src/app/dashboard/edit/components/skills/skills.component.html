@@ -1,0 +1,33 @@
+<div class="edit_skills">
+  <div class="part">
+    <div class="main_title">Edit Skills</div>
+    <div class="form">
+      <form [formGroup]="formSkill" class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>New Skills</mat-label>
+            <input formControlName="name" matInput required />
+            <mat-error>required</mat-error>
+          </mat-form-field>
+          <div class="drag_drop" #skillsDrop>
+            <label for="skills_icon">
+              <span>Uplaod Icon</span>
+              <div class="image">
+                <img src="" #icon_skills>
+              </div>
+            </label>
+            <input (change)="selectIcon($event)" type="file" id="skills_icon" accept="image/*">
+          </div>
+          <button [disabled]="formSkill.invalid" (click)="upload()" class="main_btn">Upload</button>
+      </form>
+      <div class="col">
+        <div class="group_skills">
+          <div class="skill" *ngFor="let skill of skills;index as i;">
+            <span class="sub_title">{{skill.name}}</span>
+            <a (click)="removeSkill(i);" class="main_btn delete ico_del"><mat-icon>delete_outline</mat-icon></a>
+          </div>
+        </div>
+      </div>
+      <!-- <a class="form_btn main_btn" href="">Uplaod</a> -->
+    </div>
+  </div>
+</div>

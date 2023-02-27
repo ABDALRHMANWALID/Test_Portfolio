@@ -1,0 +1,86 @@
+<!-- [class.act.session_bg]="headerStyleAct" [class.session_bg]="headerStyleAct" -->
+<header id="header" #header>
+    <div class="con">
+    <div class="container">
+        <div class="logo">Abdalrhman</div>
+        <ul #menu>
+            <li class="paragraph"><a href="#Home">Home</a></li>
+            <li class="paragraph"><a href="#About">About</a></li>
+            <li class="paragraph"><a href="#Skills">Skills</a></li>
+            <li class="paragraph"><a href="#Portfolio">Portfolio</a></li>
+            <li class="paragraph"><a href="#Blogs">Blogs</a></li>
+            <li class="paragraph"><a href="#Experience" >Experience</a></li>
+            <li class="paragraph"><a href="#Contact">Contact</a></li>
+        </ul>
+        <div class="bars" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+</header>
+<router-outlet></router-outlet>
+<footer class="session">
+    <div class="container">
+        <div class="info">
+            <div class="logo">Abdalrhman</div>
+            <div class="paragraph">My name is Abdalrhman Walid Mahmoud, from Egypt I am software engineer with 1+ years
+                of experience, I work in Tech Company in Egypt "EngEgypt",
+            </div>
+        </div>
+        <div class="links">
+            <div class="sub_title">Useful Links</div>
+            <ul class="group_links">
+                <li>
+                    <a href="">About me</a>
+                </li>
+                <li>
+                    <a href="">My Skills</a>
+                </li>
+                <li>
+                    <a href="">My portfolio</a>
+                </li>
+                <li>
+                    <a href="">My Blogs</a>
+                </li>
+                <li>
+                    <a href="">My Experience</a>
+                </li>
+                <li>
+                    <a href="">Contact me</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contact_info">
+            <div class="sub_title">Contact Information</div>
+            <ul class="social">
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-facebook.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-instagram.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-linkedin.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-telegram-app.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-twitter.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-whatsapp.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/social/icons8-youtube.svg" alt=""></a>
+                </li>
+            </ul>
+            <div class="paragraph">
+                My personal contact<br>
+                +20 0101 960 9406
+            </div>
+        </div>
+    </div>
+</footer>

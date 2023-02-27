@@ -1,0 +1,17 @@
+<div class="experience session session_bg" id="Experience">
+    <div class="container">
+        <div class="main_title">My Experience</div>
+        <div class="group_experience">
+            <div class="step_experience" *ngFor="let Exp of myExperience">
+                <div class="icon"><img [src]="Exp.image" alt=""></div>
+                <div class="info">
+                    <div class="sub_title">{{Exp.title}}</div>
+                    <div class="paragraph">
+                        {{Exp.description}} <br> from <span>{{Exp.dateStart}}</span>
+                        To <span>{{Exp.dateEnd}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="edit_inforamtion">
+  <div class="part">
+    <div class="main_title">Edit Inforamtion</div>
+    <form [formGroup]="infoForm" class="form">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Your Name</mat-label>
+          <input formControlName="name" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Your Job</mat-label>
+          <input formControlName="job" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Your Level</mat-label>
+          <input formControlName="level" matInput required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Your Phone</mat-label>
+          <input formControlName="phone" matInput type="tel" required />
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Youtube Channel</mat-label>
+          <input formControlName="URLyoutube" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Telegram Channel</mat-label>
+          <input formControlName="URLtelegram" matInput type="url"  />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Facebook Padge</mat-label>
+          <input formControlName="URLfacebook" matInput type="url"  />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>URL WhatsApp Chat</mat-label>
+          <input formControlName="URLwhatsapp" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Instagram Padge</mat-label>
+          <input formControlName="URLinstagram" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Linkedin Portfolio</mat-label>
+          <input formControlName="URLlinkedin" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Twitter Padge</mat-label>
+          <input formControlName="URLtwitter" matInput type="url"  />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL GitHub</mat-label>
+          <input formControlName="URLgithub" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL Behance</mat-label>
+          <input formControlName="URLbehance" matInput type="url" />
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <div class="drag_drop">
+          <label for="uploadImg"><span>Upload Images</span></label>
+          <input hidden accept="image/*" (change)="selectImage($event)"  id="uploadImg" type="file">
+        </div>
+        <div class="group_images">
+          <div *ngFor="let image of images;index as i;">
+          <div class="images" (dblclick)="selectlandImage(i)">
+            <a (click)="deleteImage(i)" class="del_icon"><mat-icon>cancel</mat-icon></a>
+            <img [src]="image" alt="">
+          </div>
+        </div>
+        </div>
+        <div class="drag_drop cv_drop" #cv_preiew>
+          <label for="uploadCV">
+            <a class="image">
+              <img src="assets/icons/icons8-pdf-48.png" alt="">
+            </a>
+            <span>Upload CV</span>
+          </label>
+          <input hidden  accept = "application/*" (change)="selectCV($event)"  id="uploadCV" type="file" >
+        </div>
+        <!-- <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+          <ngx-dropzone-label>
+            <div>
+              <h2>CV</h2>
+            </div>
+          </ngx-dropzone-label>
+          <ngx-dropzone-image-preview nginfoAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+            [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </div> -->
+      </div>
+
+      <button class="form_btn main_btn" [disabled]="infoForm.invalid" (click)="upload()">Uplaod</button>
+    </form>
+  </div>
+</div>

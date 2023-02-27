@@ -1,0 +1,13 @@
+.del_dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    .del_dialog_btns {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+}

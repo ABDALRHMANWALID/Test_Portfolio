@@ -1,0 +1,91 @@
+.dashboard {
+    height: 100%;
+
+    mat-sidenav-container {
+        height: 100%;
+
+        mat-sidenav,
+        mat-sidenav-content {
+            padding: calc(var(--main-padding-top) / 2);
+        }
+
+        mat-sidenav {
+            padding-left: 0;
+            padding-right: 0;
+            width: 300px;
+            background-color: var(--offwhite-color);
+
+            .logo {
+                padding: 0 32px;
+                margin-bottom: calc(var(--main-padding-top) / 2);
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                li {
+                    width: 100%;
+
+                    .nav_link {
+                        width: 100%;
+                        padding: 4px 32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 16px;
+                        background-color: var(--bg-color);
+                        font-size: 24px;
+                        font-weight: 400;
+                        position: relative;
+                        cursor: pointer;
+                        transition: .3s;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 0%;
+                            background-color: var(--main-color);
+                            opacity: .1;
+                            transition: .3s;
+                        }
+
+                        &:hover::before {
+                            width: 100%;
+                        }
+
+                        .icon {
+                            height: 32px;
+                            width: 32px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        &.act {
+                            background-color: var(--main-color);
+                            color: var(--bg-color);
+                            .icon {
+                                img {
+                                    fill: var(--bg-color) !important;
+                                }
+                            }
+                        }
+                        &.act::before {
+                            background-color: var(--black-color-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
